@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Consulta de CEP</title>
+</head>
+
+<body>
+    <h1>Consulta de CEP</h1>
+    <p>Digite um CEP para consultar:</p>
+    <input type="text" id="cepInput" placeholder="Digite o CEP">
+    <button onclick="consultarCEP()">Consultar</button>
+    <div id="resultado"></div>
+
+    <script>
+        function consultarCEP() {
+            var cep = document.getElementById("cepInput").value;
+            var url = "https://viacep.com.br/ws/" + cep + "/json/";
+
+            // Resgatando dados de um servidor.
+            //não é compatível com o Internet Explorer 11 (ou anterior).
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.cep) {
+                        document.getElementById("resultado").innerHTML = `
+                            <p>CEP: ${data.cep}</p>
+                            <p>Logradouro: ${data.logradouro}</p>
+                            <p>Complemento: ${data.complemento}</p>
+                            <p>Bairro: ${data.bairro}</p>
+                            <p>Cidade: ${data.localidade}</p>
+                            <p>Estado: ${data.uf}</p>
+                        `;
+                    } else {
+                        document.getElementById("resultado").innerHTML = "CEP não encontrado";
+                    }
+                })
+                .catch(error => {
+                    console.error("Erro na consulta de CEP: " + error);
+                });
+        }
+    </script>
+</body>
+
+</html>

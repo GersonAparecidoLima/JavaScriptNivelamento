@@ -1,0 +1,20 @@
+
+//Objeto carro
+const carro = {
+	marca: "Fiat", 
+	modelo: "Uno", 
+	ano: 2012
+	};
+
+
+// stringify Converte um obj em texto
+// O JSON.stringify()método estático converte um valor JavaScript em uma string JSON
+
+let texto = JSON.stringify(carro);
+console.log(texto);
+
+// transformando em obj JSON.parse
+//O JSON.parse()método estático analisa uma string JSON, construindo o valor ou objeto
+//let   obj = JSON.parse(texto);
+const obj = JSON.parse(texto);
+console.log(obj.modelo);

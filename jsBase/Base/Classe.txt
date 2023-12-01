@@ -1,0 +1,40 @@
+/*
+// deterninação do obj
+const carro = {
+	marca: "Fiat",
+	modelo: "uno",
+	ano: "2001",
+}
+*/
+// 1 declaramos as classe
+// 2 chamamos a class
+// criando uma class
+//  class e a fabrica
+class Carro{
+	//aqui fica a construção deste carro
+	constructor(valor1,valor2,valor3){
+		this.marca  = valor1;
+		this.modelo = valor2;
+		this.ano    = valor3;
+		
+	}
+	
+	//Metodo
+	buzina(){
+		return this.modelo +" Buzinou:  Biiiiiiii";
+	}
+	
+}
+//chamado a construção 
+const uno = new Carro("Fiat","uno","2012");
+const gol = new Carro("Vw","gol","2001");
+console.log(uno);
+console.log(uno.ano);
+console.log(gol.ano);
+console.log(uno.buzina());
+console.log(gol.buzina());
+gol.ano =2009;
+console.log(gol.ano);
+
+
+

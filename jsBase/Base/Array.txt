@@ -1,0 +1,28 @@
+const lista = ["arroz","feijão","macarrão","leite"];
+//adcionando um iten
+lista.push("Ovos");
+//console.log(lista[3]);
+console.log(lista[lista.length - 1]);
+
+// ou 
+
+const Listas = [];
+Listas[0] = "arroz";
+Listas[1] = "feijão";
+Listas[2] = "macarrão";
+Listas[3] = "leite";
+//console.log(Listas[0]);
+//adcionando um iten
+Listas[Listas.length] = "Frango";
+console.log(Listas[Listas.length - 1]);
+//verificando se e um array
+console.log(Array.isArray(Listas));
+
+const ListaNew = new Array("arroz","feijão","macarrão","leite");
+//console.log(ListaNew[1]);
+console.log(ListaNew[ListaNew.length - 1]);
+
+
+// Métodos Para Arrays 
+
+

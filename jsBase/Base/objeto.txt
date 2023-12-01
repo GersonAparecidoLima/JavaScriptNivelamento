@@ -1,0 +1,20 @@
+/*
+declarando variavel no js
+var ou let
+*/
+const carro = {
+marca:"Fiat",
+Modelo:"Uno",
+ano:"2012",
+placa:"Aj0234",
+Buzina: function(){console.log('Biiiiiiii')},
+Complemento: function(){
+	return "A marca é " + this.marca + ", e o modelo é: "+ this.modelo
+}
+
+};
+console.log(carro.marca);
+//
+console.log(carro["placa"]);
+console.log(carro.Buzina());
+console.log(carro.Complemento());

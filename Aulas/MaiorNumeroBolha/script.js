@@ -12,7 +12,7 @@
 //para cada elemento eu quero um numero => map(x => Number(x));
 const dados = document.getElementById("dados").innerHTML.split('\n').map(x => Number(x));
 
-console.log(Math.max(...dados));
+//console.log(Math.max(...dados));
 
 //Começando o algoritimo para procur o mairo
 

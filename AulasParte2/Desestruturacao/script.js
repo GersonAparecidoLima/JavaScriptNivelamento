@@ -49,10 +49,10 @@ console.log(subTotal(obj.items[1]));
 
 function total({ items }) {
     let soma = 0;
-    //Percorrendo o array ou vetor
+    //Percorrendo o vetor
     for (let i = 0; i < items.length; i++) {
         //a função subTotal price * quantity
-        //Depois soma, isto acontece para cada elemento do array ou vetor
+        //Depois soma, isto acontece para cada elemento do vetor
         soma = soma + subTotal(items[i]);
     }
     return soma;

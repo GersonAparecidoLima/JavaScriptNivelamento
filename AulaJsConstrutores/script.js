@@ -1,46 +1,39 @@
-const p1 = {
-    name: "Computador",
-    price: 3000.0,
-    quantity: 2
-}
-//Funções construtoras instanciam objetos com uma estrutura pré-definida.
-//Product e o nome de uma função
+//Definindo uma class
+class Product {
+    //Definindo um construtor
+    //Definindo a função quando vc criar
+    constructor(name, price, quantity) {
+        //Propriedade atributos
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
 
-const Product = function (name, price, quantity) {
-    //A palavra chave this é uma 
-    //referência para o próprio objeto.
-    //Definido propriedade ou artributos
-    this.name = name;
-    this.price = price;
-    this.quantity = quantity;
-}
+    //Metodo
+    total() {
+        //this refencia um membro do objeto
+        //price e quantity este atributo ou propriedade        
+        return this.price * this.quantity;
+    }
 
-Product.prototype.total = function () {
-    //Definicção do Metodo total
-    //Acessando os atributos price e quantity
-    //Pegando o price do obejto vezes a quantity
-    return this.price * this.quantity;
-}
+    //Metodo
+    add(amount) {
+        this.quantity += amount;
+    }
 
-Product.prototype.add = function (amount) {
-    //Metodo que adiciona quantia 
-    this.quantity += amount;
-}
+    //Metodo
+    remove(amount) {
+        if (this.quantity >= amount) {
+            this.quantity -= amount;
+        }
+    }
 
-Product.prototype.remove = function (amount) {
-    //Metodo que remove quantia 
-    if (this.quantity >= amount) {
-        this.quantity -= amount;
+    //Metodo
+    label() {
+        return "Dados: " + this.name + ", " + this.price.toFixed(2);
     }
 }
 
-Product.prototype.label = function () {
-    //Metodo que retorna os dados em forma de string
-    //toFixed duas casa decimal
-    return "Dados: " + this.name + ", " + this.price.toFixed(2);
-}
+const p1 = new Product("Monitor", 800.0, 10);
 
-//Instanciando um novo objeto
-const p2 = new Product("Monitor", 800.0, 10);
-
-const p3 = new Product("Mouse", 50.0, 4);
+const p2 = new Product("Mouse", 50.0, 4);
